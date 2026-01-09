@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Tienda online de Bosque de Tinta - Explora nuestra colección de libros por categorías: ficción, fantasía, historia, terror y más.">
+    <title>Tienda Online - Bosque de Tinta</title>
+    <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- CABECERA - Logo y nombre de la empresa -->
+    <header>
+        <img src="./images/logo.png" alt="Logo Bosque de Tinta" class="logo">
+        <h1 class="company-name">Bosque de Tinta</h1>
+    </header>
+
+    <!-- NAVEGACIÓN - Buscador y menú -->
+    <nav>
+        <!-- Formulario de búsqueda (lado izquierdo) -->
+        <form class="search-form" action="#" method="get">
+            <input type="search" name="busqueda" class="search-input" placeholder="Buscar libros, autores..."
+                aria-label="Buscar">
+            <button type="submit" class="search-button">Buscar</button>
+        </form>
+
+        <!-- Menú de navegación (lado derecho) -->
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Tu librería</a></li>
+            <li><a href="tienda.html" class="nav-link">Tienda On-line</a></li>
+            <li><a href="#" class="nav-link">Contacto</a></li>
+            <li><a href="#" class="nav-link">Mi cesta</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <h2 class="section-header">Tienda</h2>
+
+        <!-- Layout de dos columnas: Categorías (25%) y Productos (75%) -->
+        <div class="shop-layout">
+            <!-- ASIDE - Barra lateral de categorías (25% del ancho) -->
+            <aside>
+                <h3 class="categories-title">Categorías</h3>
+                <ul class="categories-list">
+                    <li class="category-item">
+                        <input type="checkbox" id="cat-todos" class="category-checkbox">
+                        <label for="cat-todos">Todos los productos</label>
+                    </li>
+                    <li class="category-item">
+                        <input type="checkbox" id="cat-libros" class="category-checkbox">
+                        <label for="cat-libros">Libros</label>
+                    </li>
+                    <li class="category-item">
+                        <input type="checkbox" id="cat-tazas" class="category-checkbox">
+                        <label for="cat-tazas">Tazas</label>
+                    </li>
+                    <li class="category-item">
+                        <input type="checkbox" id="cat-bolsas" class="category-checkbox">
+                        <label for="cat-bolsas">Bolsas</label>
+                    </li>
+                    <li class="category-item">
+                        <input type="checkbox" id="cat-otros" class="category-checkbox">
+                        <label for="cat-otros">Otros</label>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- SECTION - Grid de productos (75% del ancho) -->
+            <section>
+                <div class="shop-products-grid">
+                    <!-- Producto 1: Don Quijote - Con modal -->
+                    <article class="product-card product-clickable" onclick="openProductModal()">
+                        <h3 class="product-name">Don Quijote de la Mancha</h3>
+                        <img src="./images/quijote.png" alt="Portada del libro Don Quijote de la Mancha"
+                            class="product-image">
+                        <p class="product-description">
+                            El clásico inmortal de Miguel de Cervantes. Las aventuras del ingenioso hidalgo...
+                        </p>
+                        <p class="product-price">18,99 €</p>
+                        <button class="btn-primary" onclick="event.stopPropagation()">Comprar</button>
+                    </article>
+
+                    <!-- Producto 2: It (Stephen King) -->
+                    <article class="product-card">
+                        <h3 class="product-name">It (Eso)</h3>
+                        <img src="./images/it.png" alt="Portada del libro It de Stephen King" class="product-image">
+                        <p class="product-description">
+                            La obra maestra del terror de Stephen King. Una historia aterradora sobre
+                            el miedo, la amistad y el mal que acecha en las sombras.
+                        </p>
+                        <p class="product-price">26,99 €</p>
+                        <button class="btn-primary">Comprar</button>
+                    </article>
+
+                    <!-- Producto 3: Reyes Caídos -->
+                    <article class="product-card">
+                        <h3 class="product-name">Reyes caídos</h3>
+                        <img src="./images/reyes_caidos.png" alt="Portada del libro Reyes Caídos" class="product-image">
+                        <p class="product-description">
+                            Una épica saga de fantasía sobre reinos en guerra, traiciones ancestrales
+                            y la lucha por el poder.
+                        </p>
+                        <p class="product-price">24,99 €</p>
+                        <button class="btn-primary">Comprar</button>
+                    </article>
+
+                    <!-- Producto 4: La Naranja Mecánica -->
+                    <article class="product-card">
+                        <h3 class="product-name">La naranja mecánica</h3>
+                        <img src="./images/naranja_mecanica.png" alt="Portada del libro La Naranja Mecánica"
+                            class="product-image">
+                        <p class="product-description">
+                            La controvertida novela de Anthony Burgess sobre violencia, libre albedrío
+                            y el control social en una sociedad distópica.
+                        </p>
+                        <p class="product-price">16,99 €</p>
+                        <button class="btn-primary">Comprar</button>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA - Una fila -->
+    <footer>
+        <div class="footer-content">
+            <!-- Redes sociales a la izquierda -->
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright a la derecha -->
+            <p class="copyright">© 2025 Bosque de Tinta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL - Detalle del producto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="./images/quijote.png" alt="Don Quijote de la Mancha">
+                </div>
+                <div class="modal-info">
+                    <h2>Don Quijote de la Mancha</h2>
+                    <p class="modal-price">18,99 €</p>
+                    <h3>Descripción completa:</h3>
+                    <p class="modal-description">
+                        El clásico inmortal de Miguel de Cervantes. Las aventuras del ingenioso hidalgo
+                        Don Quijote de la Mancha y su fiel escudero Sancho Panza. Una obra maestra de la
+                        literatura universal que narra las peripecias de un caballero andante que lucha
+                        contra molinos de viento creyendo que son gigantes. Una historia que mezcla humor,
+                        crítica social y reflexiones sobre la realidad y la ficción. Esta edición incluye
+                        las dos partes de la obra original, con ilustraciones clásicas y notas explicativas
+                        que enriquecen la lectura de esta joya literaria que ha inspirado a generaciones
+                        de lectores en todo el mundo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para el modal -->
+    <script>
+        function openProductModal() {
+            document.getElementById('productModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Evita scroll del body
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura scroll del body
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function (event) {
+            const modal = document.getElementById('productModal');
+            if (event.target === modal) {
+                closeProductModal();
+            }
+        }
+
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeProductModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

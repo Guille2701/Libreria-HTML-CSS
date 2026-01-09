@@ -1,0 +1,632 @@
+/* ============================================
+   BOSQUE DE TINTA - BOOKSTORE WEBSITE STYLES
+   ============================================ */
+
+/* === IMPORTAR FUENTES DE GOOGLE === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+/* === VARIABLES CSS - Basadas en Figma Design System === */
+:root {
+    /* Colores primarios - Verde (del diseño Figma) */
+    --color-primary: #28A745;
+    /* Green - Color principal vibrante del Figma */
+    --color-primary-dark: #006400;
+    /* Green oscuro para header superior */
+    --color-primary-darker: #0b6d27;
+    /* Green 700 - Muy oscuro */
+    --color-primary-light: #cfffe5;
+    /* Green 50 - Muy claro */
+    --color-primary-lighter: #9fff9;
+    /* Green 100 - Claro */
+    --color-primary-400: #00be1b;
+    /* Green 400 */
+
+    /* Colores complementarios - Azul */
+    --color-blue: #3296a0;
+    /* Blue 700 - Azul medio */
+    --color-blue-dark: #3b5998;
+    /* Blue para footer */
+    --color-blue-light: #5176c8;
+    /* Blue 600 */
+
+    /* Colores neutros */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-light: #f5f5f5;
+    --color-gray: #cccccc;
+    --color-gray-medium: #d6d7b0;
+    --color-gray-dark: #666666;
+    --color-text: #333333;
+    --color-beige: #e5f7f6;
+    /* Fondo claro beige */
+
+    /* Tipografía - Tamaños exactos del Figma */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Tamaños de fuente según Figma */
+    --font-size-h1: 4.5rem;
+    /* 72px - Hero Display */
+    --font-size-h2: 3rem;
+    /* 48px - Section Heading */
+    --font-size-h3: 2rem;
+    /* 32px - Subsection */
+    --font-size-h4: 1.5rem;
+    /* 24px - Component Title */
+    --font-size-h5: 1.125rem;
+    /* 18px - Label/Subtitle */
+    --font-size-body: 1rem;
+    /* 16px - Body */
+    --font-size-small: 0.875rem;
+    /* 14px - Body Small */
+    --font-size-caption: 0.75rem;
+    /* 12px - Caption */
+    --font-size-button: 1rem;
+    /* 16px - Button */
+
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Bordes */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* === RESET Y ESTILOS BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-white);
+}
+
+/* === TIPOGRAFÍA - Basada en Figma Type Scale === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+/* H1 - Hero Display: 72px x 800, Line-height 1.1 */
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+/* H2 - Section Heading: 48px x 700, Line-height 1.2 */
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* H3 - Subsection: 32px x 600, Line-height 1.3 */
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* H4 - Component Title: 24px x 600, Line-height 1.4 */
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* H5 - Label/Subtitle: 18px x 600, Line-height 1.4 */
+h5 {
+    font-size: var(--font-size-h5);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* === HEADER - Cabecera === */
+header {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    padding-left: var(--spacing-xl);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+.company-name {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* === NAV - Barra de navegación === */
+nav {
+    background-color: var(--color-primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Formulario de búsqueda */
+.search-form {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.search-input {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 2px solid var(--color-primary-dark);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    min-width: 250px;
+}
+
+.search-button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--color-primary-darker);
+}
+
+/* Menú de navegación */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: var(--spacing-xs);
+}
+
+.nav-link:hover {
+    color: var(--color-primary-lighter);
+}
+
+/* === MAIN - Contenido principal === */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* === SECTIONS - Secciones === */
+section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+    font-size: 1.75rem;
+}
+
+/* Sección "Sobre nosotros" */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* Productos destacados */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Botón comprar */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: scale(1.05);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.125rem;
+}
+
+/* Producto clickeable */
+.product-clickable {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-clickable:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* === MODAL - Ventana emergente para detalles del producto === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    margin: 2% auto;
+    padding: 0;
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--color-gray-dark);
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--color-primary-dark);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xxl);
+}
+
+.modal-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gray-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    width: 100%;
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-lg);
+}
+
+.modal-info h2 {
+    font-size: 2rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.modal-info h3 {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0;
+}
+
+.modal-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 0;
+}
+
+.modal-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-gray-dark);
+    text-align: justify;
+}
+
+/* Mapa de tiendas - Layout de dos columnas */
+.map-section {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Lista de ubicaciones */
+.locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+}
+
+.location-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.location-address {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* === TIENDA - Página de productos === */
+.shop-layout {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: var(--spacing-lg);
+}
+
+/* Sidebar de categorías */
+aside {
+    background-color: var(--color-gray-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.categories-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.categories-list {
+    list-style: none;
+}
+
+.category-item {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--color-gray);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.category-item:hover {
+    background-color: var(--color-primary-light);
+}
+
+.category-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Grid de productos de tienda */
+.shop-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* === FOOTER - Pie de página === */
+footer {
+    background-color: var(--color-blue-dark);
+    color: var(--color-white);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Redes sociales a la izquierda */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.footer-social h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Copyright a la derecha */
+.copyright {
+    text-align: right;
+    font-size: 0.9rem;
+    margin: 0;
+}

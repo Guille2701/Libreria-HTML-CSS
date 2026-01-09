@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Bosque de Tinta - Librería especializada en literatura, fantasía, misterio y clásicos. Encuentra tu próxima lectura.">
+    <title>Bosque de Tinta - Librería</title>
+    <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- CABECERA - Logo y nombre de la empresa -->
+    <header>
+        <img src="./images/logo.png" alt="Logo Bosque de Tinta" class="logo">
+        <h1 class="company-name">Bosque de Tinta</h1>
+    </header>
+
+    <!-- NAVEGACIÓN - Buscador y menú -->
+    <nav>
+        <!-- Formulario de búsqueda (lado izquierdo) -->
+        <form class="search-form" action="#" method="get">
+            <input type="search" name="busqueda" class="search-input" placeholder="Buscar libros, autores..."
+                aria-label="Buscar">
+            <button type="submit" class="search-button">Buscar</button>
+        </form>
+
+        <!-- Menú de navegación (lado derecho) -->
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Tu librería</a></li>
+            <li><a href="tienda.html" class="nav-link">Tienda On-line</a></li>
+            <li><a href="#" class="nav-link">Contacto</a></li>
+            <li><a href="#" class="nav-link">Mi cesta</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- SECCIÓN 1: Sobre nosotros / Presentación -->
+        <section>
+            <h2 class="section-header">Sobre nosotros</h2>
+            <div class="about-content">
+                <!-- Imagen de la librería -->
+                <img src="./images/principal.png" alt="Interior de la librería Bosque de Tinta" class="about-image">
+
+                <!-- Texto descriptivo -->
+                <div class="about-text">
+                    <p>
+                        En Bosque de Tinta creamos este lugar lleno de vida para
+                        quienes aman las historias. Nuestro equipo de libros,
+                        apasionados e inquietos, que siempre, emoción y
+                        entusiasmo, desde los clásicos atemporales hasta las
+                        últimas novedades literarias.
+                    </p>
+                    <p>
+                        Somos mucho más que una simple librería: defiende de
+                        manifestaciones y opiniones personales y compartir la pasión
+                        por la lectura con nuestra comunidad. Creemos profundamente
+                        en el poder de las palabras para inspirar, educar y
+                        entretener.
+                    </p>
+                    <p>
+                        Nos especializamos e inspiramos en tener momentos con
+                        un libro en manos, que recorriendo lo mejor de cada época,
+                        cada autor, cada historia que merece ser contada y
+                        compartida.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Productos destacados -->
+        <section>
+            <h2 class="section-header">Productos destacados</h2>
+            <div class="products-grid">
+                <!-- Producto 1: Cruce de Caminos -->
+                <article class="product-card">
+                    <h3 class="product-name">Cruce de caminos</h3>
+                    <img src="./images/cruce_caminos.png" alt="Portada del libro Cruce de Caminos"
+                        class="product-image">
+                    <p class="product-description">Una novela de misterio que te mantendrá en suspenso hasta la última
+                        página.</p>
+                    <p class="product-price">19,99 €</p>
+                    <button class="btn-primary">Comprar</button>
+                </article>
+
+                <!-- Producto 2: Reyes Caídos -->
+                <article class="product-card">
+                    <h3 class="product-name">Reyes caídos</h3>
+                    <img src="./images/reyes_caidos.png" alt="Portada del libro Reyes Caídos" class="product-image">
+                    <p class="product-description">Una épica historia de fantasía sobre reinos, poder y traición.</p>
+                    <p class="product-price">24,99 €</p>
+                    <button class="btn-primary">Comprar</button>
+                </article>
+
+                <!-- Producto 3: La Naranja Mecánica -->
+                <article class="product-card">
+                    <h3 class="product-name">La naranja mecánica</h3>
+                    <img src="./images/naranja_mecanica.png" alt="Portada del libro La Naranja Mecánica"
+                        class="product-image">
+                    <p class="product-description">Un clásico distópico de Anthony Burgess sobre violencia y libre
+                        albedrío.</p>
+                    <p class="product-price">16,99 €</p>
+                    <button class="btn-primary">Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Encuentranos / Buscador de tiendas -->
+        <section>
+            <h2 class="section-header">Encuéntranos</h2>
+            <div class="map-section">
+                <!-- Mapa (60% izquierda) -->
+                <div class="map-wrapper">
+                    <img src="./images/map.png" alt="Mapa con ubicaciones de nuestras librerías" class="map-image">
+                </div>
+
+                <!-- Lista de ubicaciones (40% derecha) -->
+                <div class="locations-list">
+                    <div class="location-item">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="#dc3545">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <p class="location-address">Calle Gran Capitán, s/n, 18002</p>
+                    </div>
+
+                    <div class="location-item">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="#dc3545">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <p class="location-address">Calle Obispo Hurtado, 5, 18002</p>
+                    </div>
+
+                    <div class="location-item">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="#dc3545">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <p class="location-address">Calle Madre Riquelme, 1, 18002</p>
+                    </div>
+
+                    <div class="location-item">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="#dc3545">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <p class="location-address">Camino Peñuelas, 2, 18008</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA - Una fila -->
+    <footer>
+        <div class="footer-content">
+            <!-- Redes sociales a la izquierda -->
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright a la derecha -->
+            <p class="copyright">© 2025 Bosque de Tinta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
