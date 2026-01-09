@@ -263,13 +263,3 @@ Libreria HTML CSS/
 Proyecto de Diseño Web con HTML y CSS
 
 ---
-
-## 📝 Notas de Implementación
-
-- **No responsive**: El proyecto NO incluye diseño responsive (sin media queries)
-- **Desktop only**: Optimizado para pantallas de escritorio
-- **Assets generados con IA**: Todas las imágenes fueron generadas con IA
-- **Código limpio**: Estructura modular y bien comentada
-
----
-
