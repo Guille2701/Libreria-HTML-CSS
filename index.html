@@ -20,6 +20,13 @@
 
     <!-- NAVEGACIÓN - Buscador y menú -->
     <nav>
+        <!-- Botón hamburguesa (solo visible en móvil) -->
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <!-- Formulario de búsqueda (lado izquierdo) -->
         <form class="search-form" action="#" method="get">
             <input type="search" name="busqueda" class="search-input" placeholder="Buscar libros, autores..."
@@ -28,7 +35,7 @@
         </form>
 
         <!-- Menú de navegación (lado derecho) -->
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
             <li><a href="index.html" class="nav-link">Tu librería</a></li>
             <li><a href="tienda.html" class="nav-link">Tienda On-line</a></li>
             <li><a href="#" class="nav-link">Contacto</a></li>
@@ -38,7 +45,7 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main>
-        <!-- SECCIÓN 1: Sobre nosotros / Presentación -->
+        <!-- SECCIÓN 1: Sobre nosotros -->
         <section>
             <h2 class="section-header">Sobre nosotros</h2>
             <div class="about-content">
@@ -112,12 +119,9 @@
         <section>
             <h2 class="section-header">Encuéntranos</h2>
             <div class="map-section">
-                <!-- Mapa (60% izquierda) -->
                 <div class="map-wrapper">
                     <img src="./images/map.png" alt="Mapa con ubicaciones de nuestras librerías" class="map-image">
                 </div>
-
-                <!-- Lista de ubicaciones (40% derecha) -->
                 <div class="locations-list">
                     <div class="location-item">
                         <svg class="location-icon" viewBox="0 0 24 24" fill="#dc3545">
@@ -189,6 +193,26 @@
             <p class="copyright">© 2025 Bosque de Tinta. Todos los derechos reservados.</p>
         </div>
     </footer>
+     <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerBtn.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            });
+        });
+    </script>
+   
 </body>
 
 </html>

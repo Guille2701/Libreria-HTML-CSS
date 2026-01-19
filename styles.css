@@ -630,3 +630,384 @@ footer {
     font-size: 0.9rem;
     margin: 0;
 }
+
+/* === HAMBURGER MENU - Menú de hamburguesa === */
+.hamburger-menu {
+    display: none;
+    /* Oculto por defecto en desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animación del menú hamburguesa cuando está activo */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============================================
+   MEDIA QUERIES PARA HECERLO RESPONSIVE
+   ============================================ */
+
+/* === TABLET (601px - 1024px) === */
+@media screen and (max-width: 1024px) {
+
+    /* PÁGINA PRINCIPAL - INDEX.HTML */
+
+    /* Cabecera: Logo y nombre separados (izquierda y derecha) */
+    header {
+        justify-content: space-between;
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+
+    /* Reducir tamaño del logo (opcional pero recomendado) */
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .company-name {
+        font-size: 1.75rem;
+    }
+
+    /* Navegación: Buscador debajo del menú */
+    nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: stretch;
+    }
+
+    .search-form {
+        order: 2;
+        /* Buscador debajo */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-menu {
+        order: 1;
+        /* Menú arriba */
+        justify-content: center;
+    }
+
+    /* Productos destacados: 2 columnas en tablet */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Pie de página: mantener horizontal pero ajustar */
+    .footer-content {
+        gap: var(--spacing-md);
+    }
+
+    .footer-social h3 {
+        font-size: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+
+    /* PÁGINA DE TIENDA - TIENDA.HTML */
+
+    /* Layout de tienda: Columnas apiladas */
+    .shop-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sidebar de categorías arriba */
+    aside {
+        order: -1;
+    }
+
+    /* Productos en tienda: 2-3 por línea */
+    .shop-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* === MÓVIL (Hasta 600px) === */
+@media screen and (max-width: 600px) {
+
+    /* === ESTILOS GENERALES === */
+
+    /* Reducir espaciado general */
+    main {
+        padding: var(--spacing-sm);
+    }
+
+    /* Ajustar tamaños de fuente */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .section-header {
+        font-size: 1.5rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    /* === CABECERA === */
+    header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .company-name {
+        font-size: 1.5rem;
+    }
+
+    /* === NAVEGACIÓN - MENÚ HAMBURGUESA === */
+
+    /* Mostrar botón hamburguesa */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Reorganizar navegación */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        padding: var(--spacing-sm);
+    }
+
+    /* Buscador independiente debajo */
+    .search-form {
+        width: 100%;
+        order: 3;
+        margin-top: var(--spacing-sm);
+    }
+
+    .search-input {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .search-button {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    /* Menú desplegable vertical */
+    .nav-menu {
+        display: none;
+        /* Oculto por defecto */
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        background-color: var(--color-primary-dark);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        box-shadow: var(--shadow-lg);
+        z-index: 100;
+        order: 2;
+    }
+
+    /* Mostrar menú cuando está activo */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-primary);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: var(--spacing-md);
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-link:hover {
+        background-color: var(--color-primary);
+    }
+
+    /* === CONTENIDO PRINCIPAL - INDEX.HTML === */
+
+    /* Sección "Sobre nosotros": vertical */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Productos destacados: 1 columna */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Mapa: vertical */
+    .map-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .location-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .location-address {
+        font-size: 1rem;
+    }
+
+    /* === PIE DE PÁGINA === */
+
+    /* Footer vertical */
+    footer {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .footer-social {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .footer-social h3 {
+        font-size: 1.125rem;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    /* === PÁGINA DE TIENDA - TIENDA.HTML === */
+
+    /* Ocultar logo en página de productos (tienda) */
+    body:has(.shop-layout) .logo {
+        display: none;
+    }
+
+    /* Layout de tienda: todo vertical */
+    .shop-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Categorías arriba */
+    aside {
+        padding: var(--spacing-md);
+    }
+
+    .categories-title {
+        font-size: 1.25rem;
+    }
+
+    /* Productos: 1 por fila (vertical) */
+    .shop-products-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Ajustar tarjetas de producto */
+    .product-card {
+        padding: var(--spacing-sm);
+    }
+
+    .product-image {
+        height: 250px;
+    }
+
+    .product-name {
+        font-size: 1.125rem;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+    }
+
+    .product-price {
+        font-size: 1.125rem;
+    }
+
+    /* === MODAL === */
+
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .modal-body {
+        padding: var(--spacing-lg);
+    }
+
+    .modal-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-price {
+        font-size: 1.5rem;
+    }
+
+    .modal-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* === AJUSTES ADICIONALES PARA PANTALLAS MUY PEQUEÑAS === */
+@media screen and (max-width: 400px) {
+    .company-name {
+        font-size: 1.25rem;
+    }
+
+    .section-header {
+        font-size: 1.25rem;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+}
